@@ -1,11 +1,18 @@
 package com.example.Online_Management_System_1.Controller;
 
+import com.example.Online_Management_System_1.DTO.AuthRequest;
 import com.example.Online_Management_System_1.DTO.DoctorDTO;
 import com.example.Online_Management_System_1.DTO.PatientDTO;
 import com.example.Online_Management_System_1.Entity.*;
 import com.example.Online_Management_System_1.Service.AdminService;
+import com.example.Online_Management_System_1.Service.JwtService;
+import com.example.Online_Management_System_1.Service.Userservices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,11 +23,6 @@ public class AdminController {
 
     @Autowired
     private AdminService adminService;
-
-
-
-
-
 
 
     // Patient Management

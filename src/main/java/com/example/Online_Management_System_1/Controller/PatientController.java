@@ -37,12 +37,12 @@ public class PatientController {
     public ResponseEntity<Patient> addPatient(@RequestBody PatientDTO patientDTO) {
         Patient patient = new Patient();
         patient.setName(patientDTO.getName());
-        patient.setRoleId(patient.getRoleId());
-        patient.setPatientId(patient.getPatientId());
-        patient.setBirthdate(patient.getBirthdate());
-        patient.setContactNumber(patient.getContactNumber());
-        patient.setEmail(patient.getEmail());
-        patient.setPassword(patient.getPassword());
+        patient.setRoleId(patientDTO.getRoleId());
+        patient.setPatientId(patientDTO.getPatientId());
+        patient.setBirthdate(patientDTO.getBirthdate());
+        patient.setContactNumber(patientDTO.getContactNumber());
+        patient.setEmail(patientDTO.getEmail());
+        patient.setPassword(patientDTO.getPassword());
 
         // Set other fields as necessary...
         return ResponseEntity.ok(patientService.savePatient(patient));
@@ -55,12 +55,12 @@ public class PatientController {
         if (existingPatient != null) {
             Patient patient = new Patient();
             patient.setName(patientDTO.getName());
-            patient.setRoleId(patient.getRoleId());
-            patient.setPatientId(patient.getPatientId());
-            patient.setBirthdate(patient.getBirthdate());
-            patient.setContactNumber(patient.getContactNumber());
-            patient.setEmail(patient.getEmail());
-            patient.setPassword(patient.getPassword());
+            patient.setRoleId(patientDTO.getRoleId());
+            patient.setPatientId(patientDTO.getPatientId());
+            patient.setBirthdate(patientDTO.getBirthdate());
+            patient.setContactNumber(patientDTO.getContactNumber());
+            patient.setEmail(patientDTO.getEmail());
+            patient.setPassword(patientDTO.getPassword());
             // Update other fields as necessary...
 
             return ResponseEntity.ok(patientService.savePatient(existingPatient));

@@ -10,6 +10,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Data
 public class PatientDTO {
+    private Long roleId;
     private Long patientId;
     private Date birthdate;
     private Long contactNumber;
